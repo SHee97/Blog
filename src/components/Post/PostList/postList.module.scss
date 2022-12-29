@@ -1,0 +1,29 @@
+.postListWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 40px;
+    border-bottom: 1px solid #eeeeee;
+
+    .dropdown {
+      display: grid;
+      place-items: center;
+      padding: 8px;
+      font-size: 12px;
+      border: 1px solid #eeeeee;
+      border-radius: 8px;
+    }
+  }
+
+  .postList {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 8px;
+    margin-top: 8px;
+  }
+}
