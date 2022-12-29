@@ -16,7 +16,7 @@ const IndexPage = ({
     <main className={page}>
       <PageTemplate>
         <ContentTemplate>
-          <PostList posts={edges} />
+          <PostList posts={edges} count={9} />
         </ContentTemplate>
       </PageTemplate>
     </main>

@@ -2,7 +2,7 @@ import PostItem from './PostItem';
 
 import * as styles from './postList.module.scss';
 
-const PostList = ({ posts }) => {
+const PostList = ({ posts, count }) => {
   return (
     <section className={styles.postListWrapper}>
       <div className={styles.header}>
@@ -10,7 +10,7 @@ const PostList = ({ posts }) => {
         <div className={styles.dropdown}>최신순</div>
       </div>
       <div className={styles.postList}>
-        {posts.slice(0, 10).map((post) => (
+        {posts.slice(0, count).map((post) => (
           <PostItem post={post} />
         ))}
       </div>
