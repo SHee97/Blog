@@ -3,7 +3,7 @@ date: '2022-12-26'
 title: 'Test'
 categories: ['Web', 'JavaScript']
 summary: 'This is just testing file for post testing.'
-thumbnail: 'contents/thumbnail/thumbnail_test.png'
+thumbnail: '../images/thumbnail_test.png'
 ---
 
 <img src="../images/thumbnail_test.png">
