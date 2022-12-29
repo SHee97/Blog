@@ -1,0 +1,18 @@
+.categoryListWrapper {
+  width: 100%;
+  padding: 32px;
+  margin-top: 32px;
+
+  .title {
+    font-size: 30px;
+  }
+
+  .categoryList {
+    padding: 16px;
+
+    .categoryItem {
+      margin: 8px 0;
+      font-size: 20px;
+    }
+  }
+}
