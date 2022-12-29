@@ -1,0 +1,26 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  .message {
+    margin-bottom: 16px;
+    font-size: 36px;
+  }
+
+  .toMain {
+    padding: 8px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    background: blue;
+    border-radius: 8px;
+  }
+
+  .postListWrapper {
+    width: 768px;
+    margin-top: 16px;
+  }
+}
