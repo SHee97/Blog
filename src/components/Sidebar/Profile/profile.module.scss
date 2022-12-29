@@ -3,6 +3,17 @@
   place-items: center;
   width: 100%;
 
+  .profileImageWrapper {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 50%;
+
+    .profileImage {
+      object-fit: contain;
+    }
+  }
+
   .title {
     margin-top: 16px;
     font-size: 24px;
