@@ -1,0 +1,44 @@
+.postItemWrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 0 16px 16px;
+  border: 1px solid #eeeeee;
+  border-radius: 4px;
+
+  .thumbnail {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    object-fit: contain;
+  }
+
+  p {
+    margin: 4px 8px;
+  }
+
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .date,
+  .summary {
+    font-size: 16px;
+    color: #aaaaaa;
+  }
+
+  .categoryWrapper {
+    display: flex;
+
+    .category {
+      display: grid;
+      place-items: center;
+      height: 100%;
+      padding: 8px;
+      margin: 4px;
+      color: white;
+      background: #000000;
+      border-radius: 4px;
+    }
+  }
+}
