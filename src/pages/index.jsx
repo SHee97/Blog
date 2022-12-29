@@ -10,11 +10,15 @@ import '../styles/index.scss';
 const IndexPage = ({
   data: {
     allMarkdownRemark: { edges },
+    file: {
+      childImageSharp: { gatsbyImageData },
+    },
   },
 }) => {
+  console.log(gatsbyImageData);
   return (
     <main className={page}>
-      <PageTemplate posts={edges}>
+      <PageTemplate posts={edges} profileImage={gatsbyImageData}>
         <ContentTemplate>
           <PostList posts={edges} count={9} />
         </ContentTemplate>
@@ -43,6 +47,11 @@ export const getPostList = graphql`
             }
           }
         }
+      }
+    }
+    file {
+      childImageSharp {
+        gatsbyImageData(width: 150, height: 150)
       }
     }
   }
