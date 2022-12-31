@@ -15,7 +15,6 @@ const IndexPage = ({
     },
   },
 }) => {
-  console.log(gatsbyImageData);
   return (
     <main className={page}>
       <PageTemplate posts={edges} profileImage={gatsbyImageData}>
@@ -49,7 +48,7 @@ export const getPostList = graphql`
         }
       }
     }
-    file {
+    file(name: { eq: "profile_test" }) {
       childImageSharp {
         gatsbyImageData(width: 150, height: 150)
       }
