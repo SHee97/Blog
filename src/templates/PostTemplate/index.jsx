@@ -1,6 +1,8 @@
 import PostHeader from 'components/Post/PostHeader';
 import PostContent from 'components/Post/PostContent';
 
+import * as styles from './postTemplate.module.scss';
+
 const PostTemplate = ({
   post: {
     node: {
@@ -10,7 +12,7 @@ const PostTemplate = ({
   },
 }) => {
   return (
-    <section>
+    <section className={styles.postTemplate}>
       <PostHeader title={title} date={date} />
       <PostContent html={html} />
     </section>

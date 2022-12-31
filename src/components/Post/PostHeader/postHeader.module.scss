@@ -1,0 +1,19 @@
+.postHeadWrapper {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  height: 48px;
+  padding: 0 8px 8px;
+  border-bottom: 1px solid #eeeeee;
+
+  .title {
+    display: inline-block;
+    font-size: 36px;
+    font-weight: bold;
+  }
+
+  .date {
+    font-size: 20px;
+    color: #aaaaaa;
+  }
+}
