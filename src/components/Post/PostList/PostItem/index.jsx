@@ -1,3 +1,4 @@
+import { Link } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 
 import * as styles from './postItem.module.scss';
@@ -5,6 +6,7 @@ import * as styles from './postItem.module.scss';
 const PostItem = ({
   post: {
     node: {
+      fields: { slug },
       frontmatter: {
         title,
         date,
@@ -18,7 +20,7 @@ const PostItem = ({
   },
 }) => {
   return (
-    <div className={styles.postItemWrapper}>
+    <Link className={styles.postItemWrapper} to={slug}>
       <GatsbyImage className={styles.thumbnail} image={gatsbyImageData} alt='Post thumbnail' />
 
       <p className={styles.title}>{title}</p>
@@ -29,7 +31,7 @@ const PostItem = ({
           <div className={styles.category}>{category}</div>
         ))}
       </div>
-    </div>
+    </Link>
   );
 };
 
