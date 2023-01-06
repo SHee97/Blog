@@ -6,7 +6,7 @@ summary: 'This is just testing file for post testing.'
 thumbnail: '../images/thumbnail_test.png'
 ---
 
-<img src="../images/thumbnail_test.png">
+<img src='../images/thumbnail_test.png' alt="Testing post image" width="1px"/>
 
 ### 1. Cras fringilla erat tortor, vel.
 
