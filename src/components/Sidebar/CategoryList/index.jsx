@@ -1,3 +1,5 @@
+import { Link } from 'gatsby';
+
 import * as styles from './categoryList.module.scss';
 
 const CategoryList = ({ posts }) => {
@@ -25,7 +27,9 @@ const CategoryList = ({ posts }) => {
       <ul className={styles.categoryList}>
         {Object.entries(categoryCount).map(([key, value]) => (
           <li className={styles.categoryItem} key={key}>
-            {key} ({value})
+            <Link to={`/category/${key}`}>
+              {key} ({value})
+            </Link>
           </li>
         ))}
       </ul>
