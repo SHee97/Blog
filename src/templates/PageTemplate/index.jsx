@@ -4,10 +4,10 @@ import Footer from 'components/Footer';
 
 import * as styles from './pageTemplate.module.scss';
 
-const PageTemplate = ({ children, posts, profileImage }) => {
+const PageTemplate = ({ children }) => {
   return (
     <setion className={styles.template}>
-      <Sidebar posts={posts} profileImage={profileImage} />
+      <Sidebar />
       <div className={styles.content}>
         <Header />
         {children}

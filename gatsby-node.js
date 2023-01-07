@@ -89,8 +89,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     []
   );
 
-  const PostTemplateComponent = path.resolve(__dirname, 'src/pages/PostPage.jsx');
-  const CategoryTemplateComponent = path.resolve(__dirname, 'src/pages/CategoryPage.jsx');
+  const PostTemplateComponent = path.resolve(__dirname, 'src/templates/PostTemplate/index.jsx');
+  const CategoryTemplateComponent = path.resolve(__dirname, 'src/templates/CategoryTemplate/index.jsx');
 
   const generatePostPage = ({
     node: {
