@@ -56,6 +56,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
               fields {
                 slug
               }
+              frontmatter {
+                categories
+              }
             }
           }
         }
@@ -68,7 +71,26 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     return;
   }
 
+  const categoryListData = queryAllMarkdownData.data.allMarkdownRemark.edges.reduce(
+    (
+      categoryList,
+      {
+        node: {
+          frontmatter: { categories },
+        },
+      }
+    ) => {
+      categories.forEach((category) => {
+        if (!categoryList.includes(category)) categoryList.push(category);
+      });
+
+      return categoryList;
+    },
+    []
+  );
+
   const PostTemplateComponent = path.resolve(__dirname, 'src/pages/PostPage.jsx');
+  const CategoryTemplateComponent = path.resolve(__dirname, 'src/pages/CategoryPage.jsx');
 
   const generatePostPage = ({
     node: {
@@ -84,5 +106,16 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     createPage(pageOptions);
   };
 
+  const generateCategoryPage = (category) => {
+    const pageOptions = {
+      path: `/category/${category}`,
+      component: CategoryTemplateComponent,
+      context: { category },
+    };
+
+    createPage(pageOptions);
+  };
+
   queryAllMarkdownData.data.allMarkdownRemark.edges.forEach(generatePostPage);
+  categoryListData.forEach(generateCategoryPage);
 };
