@@ -1,10 +1,11 @@
+import { useMemo } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import PostItem from './PostItem';
 
 import * as styles from './postList.module.scss';
 
-const PostList = ({ count }) => {
+const PostList = ({ count, filter }) => {
   const {
     allMarkdownRemark: { edges },
   } = useStaticQuery(graphql`
@@ -32,17 +33,21 @@ const PostList = ({ count }) => {
     }
   `);
 
+  const filteredPostList = useMemo(() => {
+    const filteredList = filter ? edges.filter(filter) : edges;
+
+    console.log(filter);
+
+    return filteredList.slice(0, count).map((post) => <PostItem post={post} />);
+  }, [edges]);
+
   return (
     <section className={styles.postListWrapper}>
       <div className={styles.header}>
         <h2>최근 포스팅</h2>
         <div className={styles.dropdown}>최신순</div>
       </div>
-      <div className={styles.postList}>
-        {edges.slice(0, count).map((post) => (
-          <PostItem post={post} />
-        ))}
-      </div>
+      <div className={styles.postList}>{filteredPostList}</div>
     </section>
   );
 };
