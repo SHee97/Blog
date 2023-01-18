@@ -1,9 +1,8 @@
 .header {
   display: flex;
   align-items: center;
-  justify-content: end;
-  padding: 16px;
-  background: #aaaaaa;
+  height: sizes.$HEADER_HEIGHT;
+  padding: 0 48px;
 
   .title {
     flex: 1;
@@ -13,11 +12,8 @@
   }
 
   .iconWrapper {
-    display: grid;
-    place-items: center;
-    width: 32px;
-    height: 32px;
-    margin-left: 16px;
-    font-size: 32px;
+    @include mixins.alignCenter(grid);
+    margin-left: 32px;
+    font-size: sizes.$ICON_SIZE;
   }
 }
