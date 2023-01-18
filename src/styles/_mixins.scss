@@ -1,0 +1,10 @@
+@mixin alignCenter($display: grid) {
+  @if $display == grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  } @else {
+    display: grid;
+    place-items: center;
+  }
+}

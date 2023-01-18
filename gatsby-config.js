@@ -34,7 +34,16 @@ module.exports = {
         },
       },
     },
-    'gatsby-plugin-sass',
+    {
+      resolve: 'gatsby-plugin-sass',
+      options: {
+        implementation: require('sass'),
+        additionalData: `
+          @use "./src/styles/sizes.scss" as sizes;
+          @use "./src/styles/mixins.scss" as mixins;
+        `,
+      },
+    },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
