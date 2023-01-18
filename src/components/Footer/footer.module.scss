@@ -1,16 +1,14 @@
 .footer {
-  display: grid;
-  place-items: center;
+  @include mixins.alignCenter(flex);
+  flex-direction: column;
   width: 100%;
-  padding: 32px 0;
-  background-color: #eeeeee;
+  height: sizes.$FOOTER_HEIGHT;
+  padding: 48px;
+  margin-top: 96px;
 
   .iconWrapper {
-    display: grid;
-    place-items: center;
-    width: 32px;
-    height: 32px;
-    font-size: 32px;
+    @include mixins.alignCenter(grid);
+    font-size: sizes.$ICON_SIZE;
   }
 
   .phrase {
